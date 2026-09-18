@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = 'application'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jline:jline-reader:3.30.13'
+    implementation 'org.jline:jline-terminal:3.30.13'
+    implementation 'org.jline:jline-console:3.30.13'
+    implementation 'org.jline:jline-terminal-jansi:3.30.13'
+    implementation 'org.jline:jline-builtins:3.30.13'
+    implementation 'org.json:json:20250107'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.+'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.mockito:mockito-core:5.12.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.12.0'
+}
+
+test {
+    useJUnitPlatform()
+}
