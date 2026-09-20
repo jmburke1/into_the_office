@@ -1,0 +1,19 @@
+{
+  "textLines": [
+    "You are standing outside the office building.",
+    "The door is slightly ajar, revealing a dimly lit interior."
+  ],
+  "prompt": "What do you want to do?",
+  "choices": [
+    {
+      "id": "1",
+      "description": "Enter the office",
+      "nextRoom": "office_lobby"
+    },
+    {
+      "id": "2",
+      "description": "Go home",
+      "nextRoom": "home"
+    }
+  ]
+}
