@@ -1,8 +1,10 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-group = 'application'
+group = 'intotheoffice'
 version = '1.0-SNAPSHOT'
 
 java {
@@ -25,6 +27,19 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation 'org.mockito:mockito-core:5.12.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.12.0'
+}
+
+application {
+    mainClass = 'intotheoffice.MainApp'
+}
+
+shadowJar {
+    archiveBaseName.set('into_the_office')
+    archiveClassifier.set('')
+    archiveVersion.set('1.0-SNAPSHOT')
+    manifest {
+        attributes 'Main-Class': 'intotheoffice.MainApp'
+    }
 }
 
 test {

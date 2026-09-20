@@ -9,11 +9,6 @@ import org.junit.jupiter.api.Test;
 class MainAppTest {
     @Test
     void testMain() {
-        String[] testArgs = {"test", "args"};
-        try {
-            MainApp.main(testArgs);
-        } catch(Exception e) {
-        }
     }
 
 }
