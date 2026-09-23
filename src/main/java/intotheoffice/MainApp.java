@@ -10,6 +10,7 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.jline.utils.AttributedString;
 import org.jline.utils.AttributedStyle;
+import org.jline.utils.InfoCmp;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -53,7 +54,11 @@ public class MainApp {
                 printRedText,
                 printYellowText,
                 printBlueText,
-                userInput
+                userInput,
+                () -> {
+                    terminal.puts(InfoCmp.Capability.clear_screen);
+                    terminal.flush();
+                }
         );
 
         // Start the game with the initial room

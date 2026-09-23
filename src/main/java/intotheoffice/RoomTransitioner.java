@@ -17,15 +17,17 @@ public class RoomTransitioner {
     private final Consumer<String> printBlueText;
     private final Function<String, String> userInput;
     private final Set<String> alreadyVisitedRooms;
+    private final Runnable doWhenNextRoom;
 
     public RoomTransitioner(Consumer<String> printText, Consumer<String> printRedText,
                             Consumer<String> printYellowText, Consumer<String> printBlueText,
-                            Function<String, String> userInput) {
+                            Function<String, String> userInput, Runnable doWhenNextRoom) {
         this.printText = printText;
         this.printRedText = printRedText;
         this.printYellowText = printYellowText;
         this.printBlueText = printBlueText;
         this.userInput = userInput;
+        this.doWhenNextRoom = doWhenNextRoom;
         alreadyVisitedRooms = new HashSet<>();
     }
 
@@ -33,6 +35,7 @@ public class RoomTransitioner {
         String currentRoomName = startRoom;
         
         while (true) {
+            doWhenNextRoom.run();
             // Load the JSON file for the current room
             String json = loadRoomJson(currentRoomName);
             CurrentRoom currentRoom = new CurrentRoom(json, alreadyVisitedRooms.contains(currentRoomName));
