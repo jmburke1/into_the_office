@@ -1,8 +1,15 @@
 {
-  "textLines": [
-    "You are standing outside the office building.",
-    "The door is slightly ajar, revealing a dimly lit interior."
-  ],
+  "brandNewVisit": {
+    "textLines": [
+      "You are standing outside the office building.",
+      "The door is slightly ajar, revealing a dimly lit interior."
+    ]
+  },
+  "alreadyVisited": {
+    "textLines": [
+      "You're back outside."
+    ]
+  },
   "prompt": "What do you want to do?",
   "choices": [
     {
@@ -13,7 +20,14 @@
     {
       "id": "2",
       "description": "Go home",
-      "nextRoom": "home"
+      "nextRoom": "home",
+      "availability": "firstTimeVisit"
+    },
+    {
+      "id": "2",
+      "description": "Go home",
+      "nextRoom": "home_bad",
+      "availability": "subsequentVisit"
     }
   ]
 }

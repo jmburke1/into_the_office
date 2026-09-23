@@ -13,26 +13,42 @@ import java.util.List;
 public class CurrentRoom {
     private final List<String> textLines;
     private final List<String> redTextLines;
+    private final List<String> yellowTextLines;
     private final List<String> blueTextLines;
     private final String prompt;
     private final List<Choice> choices;
 
-    public CurrentRoom(String json) {
+    public CurrentRoom(String json, boolean wasAlreadyHere) {
         JSONObject jsonObject = new JSONObject(json);
         
         // Initialize textLines with default empty list
+        JSONObject textToPrint;
+        if(wasAlreadyHere) {
+            textToPrint = jsonObject.getJSONObject("alreadyVisited");
+        } else {
+            textToPrint = jsonObject.getJSONObject("brandNewVisit");
+        }
         this.textLines = new ArrayList<>();
-        if (jsonObject.has("textLines")) {
-            JSONArray textArray = jsonObject.getJSONArray("textLines");
+        if (textToPrint.has("textLines")) {
+            JSONArray textArray = textToPrint.getJSONArray("textLines");
             for (int i = 0; i < textArray.length(); i++) {
                 this.textLines.add(textArray.getString(i));
             }
         }
 
+        // Initialize yellowTextLines with default empty list
+        this.yellowTextLines = new ArrayList<>();
+        if (textToPrint.has("yellowTextLines")) {
+            JSONArray yellowArray = textToPrint.getJSONArray("yellowTextLines");
+            for (int i = 0; i < yellowArray.length(); i++) {
+                this.yellowTextLines.add(yellowArray.getString(i));
+            }
+        }
+
         // Initialize redTextLines with default empty list
         this.redTextLines = new ArrayList<>();
-        if (jsonObject.has("redTextLines")) {
-            JSONArray redArray = jsonObject.getJSONArray("redTextLines");
+        if (textToPrint.has("redTextLines")) {
+            JSONArray redArray = textToPrint.getJSONArray("redTextLines");
             for (int i = 0; i < redArray.length(); i++) {
                 this.redTextLines.add(redArray.getString(i));
             }
@@ -40,8 +56,8 @@ public class CurrentRoom {
 
         // Initialize blueTextLines with default empty list
         this.blueTextLines = new ArrayList<>();
-        if (jsonObject.has("blueTextLines")) {
-            JSONArray blueArray = jsonObject.getJSONArray("blueTextLines");
+        if (textToPrint.has("blueTextLines")) {
+            JSONArray blueArray = textToPrint.getJSONArray("blueTextLines");
             for (int i = 0; i < blueArray.length(); i++) {
                 this.blueTextLines.add(blueArray.getString(i));
             }
@@ -56,12 +72,20 @@ public class CurrentRoom {
             JSONArray choicesArray = jsonObject.getJSONArray("choices");
             for (int i = 0; i < choicesArray.length(); i++) {
                 JSONObject choiceJson = choicesArray.getJSONObject(i);
-                Choice choice = new Choice(
-                        choiceJson.getString("id"),
-                        choiceJson.getString("description"),
-                        choiceJson.getString("nextRoom")
-                );
-                this.choices.add(choice);
+                if(
+                        !choiceJson.has("availability") || (
+                                !wasAlreadyHere && choiceJson.getString("availability").equals("firstTimeVisit")
+                        ) || (
+                                wasAlreadyHere && choiceJson.getString("availability").equals("subsequentVisit")
+                        )
+                ) {
+                    Choice choice = new Choice(
+                            choiceJson.getString("id"),
+                            choiceJson.getString("description"),
+                            choiceJson.getString("nextRoom")
+                    );
+                    this.choices.add(choice);
+                }
             }
         }
     }
@@ -72,6 +96,10 @@ public class CurrentRoom {
 
     public List<String> getRedTextLines() {
         return redTextLines;
+    }
+
+    public List<String> getYellowTextLines() {
+        return yellowTextLines;
     }
 
     public List<String> getBlueTextLines() {

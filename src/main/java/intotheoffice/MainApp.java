@@ -29,6 +29,10 @@ public class MainApp {
             String redText = new AttributedString(text, AttributedStyle.DEFAULT.foreground(AttributedStyle.RED)).toAnsi();
             terminal.writer().println(redText);
         };
+        Consumer<String> printYellowText = text -> {
+            String yellowText = new AttributedString(text, AttributedStyle.DEFAULT.foreground(AttributedStyle.YELLOW)).toAnsi();
+            terminal.writer().println(yellowText);
+        };
         Consumer<String> printBlueText = text -> {
             String blueText = new AttributedString(text, AttributedStyle.DEFAULT.foreground(AttributedStyle.BLUE)).toAnsi();
             terminal.writer().println(blueText);
@@ -47,6 +51,7 @@ public class MainApp {
         RoomTransitioner transitioner = new RoomTransitioner(
                 printText,
                 printRedText,
+                printYellowText,
                 printBlueText,
                 userInput
         );

@@ -1,10 +1,12 @@
 {
-  "textLines": [
-    "You decide it's better to be safe than sorry.",
-    "You turn around and head home.",
-    "The next day, you're sipping coffee on your porch, safe from any demon possession."
-  ],
-  "blueTextLines": [
-    "You chose to go home and survived!"
-  ]
+  "brandNewVisit": {
+    "textLines": [
+      "You decide it's better to be safe than sorry.",
+      "You turn around and head home.",
+      "The next day, you're sipping coffee on your porch, safe from any demon possession."
+    ],
+    "blueTextLines": [
+      "You chose to go home and survived!"
+    ]
+  }
 }

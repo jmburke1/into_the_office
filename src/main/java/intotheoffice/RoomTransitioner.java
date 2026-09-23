@@ -7,20 +7,26 @@ package intotheoffice;
 import java.io.InputStream;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.Set;
+import java.util.HashSet;
 
 public class RoomTransitioner {
     private final Consumer<String> printText;
     private final Consumer<String> printRedText;
+    private final Consumer<String> printYellowText;
     private final Consumer<String> printBlueText;
     private final Function<String, String> userInput;
+    private final Set<String> alreadyVisitedRooms;
 
     public RoomTransitioner(Consumer<String> printText, Consumer<String> printRedText,
-                            Consumer<String> printBlueText,
+                            Consumer<String> printYellowText, Consumer<String> printBlueText,
                             Function<String, String> userInput) {
         this.printText = printText;
         this.printRedText = printRedText;
+        this.printYellowText = printYellowText;
         this.printBlueText = printBlueText;
         this.userInput = userInput;
+        alreadyVisitedRooms = new HashSet<>();
     }
 
     public void run(String startRoom) {
@@ -29,8 +35,8 @@ public class RoomTransitioner {
         while (true) {
             // Load the JSON file for the current room
             String json = loadRoomJson(currentRoomName);
-            CurrentRoom currentRoom = new CurrentRoom(json);
-            
+            CurrentRoom currentRoom = new CurrentRoom(json, alreadyVisitedRooms.contains(currentRoomName));
+
             // Print the room's text lines
             for (String line : currentRoom.getTextLines()) {
                 printText.accept(line);
@@ -40,7 +46,12 @@ public class RoomTransitioner {
             for (String line : currentRoom.getRedTextLines()) {
                 printRedText.accept(line);
             }
-            
+
+            // Print yellow text lines
+            for (String line : currentRoom.getYellowTextLines()) {
+                printYellowText.accept(line);
+            }
+
             // Print blue text lines
             for (String line : currentRoom.getBlueTextLines()) {
                 printBlueText.accept(line);
@@ -52,6 +63,7 @@ public class RoomTransitioner {
             }
             
             // Get the next room name
+            alreadyVisitedRooms.add(currentRoomName);
             currentRoomName = getNextRoom(currentRoom);
         }
     }
