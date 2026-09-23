@@ -1,0 +1,14 @@
+{
+  "specificRoom": "BillsOffice",
+  "brandNewVisit": {
+    "textLines": [
+      "You feel like you shouldn't be here.  There is a suitcase with a combination lock on the desk.",
+      "The computer monitor looks broken.  The office, generally, looks in bad shape."
+    ]
+  },
+  "alreadyVisited": {
+    "textLines": [
+      "You are in Bill's office."
+    ]
+  }
+}

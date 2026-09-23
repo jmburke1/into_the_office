@@ -4,7 +4,11 @@
  */
 package intotheoffice;
 
+import org.json.JSONObject;
+
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.Set;
@@ -18,6 +22,7 @@ public class RoomTransitioner {
     private final Function<String, String> userInput;
     private final Set<String> alreadyVisitedRooms;
     private final Runnable doWhenNextRoom;
+    private final Map<String, String> variables;
 
     public RoomTransitioner(Consumer<String> printText, Consumer<String> printRedText,
                             Consumer<String> printYellowText, Consumer<String> printBlueText,
@@ -29,6 +34,7 @@ public class RoomTransitioner {
         this.userInput = userInput;
         this.doWhenNextRoom = doWhenNextRoom;
         alreadyVisitedRooms = new HashSet<>();
+        variables = new HashMap<>();
     }
 
     public void run(String startRoom) {
@@ -37,8 +43,14 @@ public class RoomTransitioner {
         while (true) {
             doWhenNextRoom.run();
             // Load the JSON file for the current room
-            String json = loadRoomJson(currentRoomName);
-            CurrentRoom currentRoom = new CurrentRoom(json, alreadyVisitedRooms.contains(currentRoomName));
+            JSONObject json = new JSONObject(loadRoomJson(currentRoomName));
+            CurrentRoom currentRoom;
+            if(json.has("specificRoom")) {
+                currentRoom = Util.getSpecificRoom(json.getString("specificRoom"));
+            } else {
+                currentRoom = new CurrentRoom();
+            }
+            currentRoom.init(json, alreadyVisitedRooms.contains(currentRoomName), variables);
 
             // Print the room's text lines
             for (String line : currentRoom.getTextLines()) {

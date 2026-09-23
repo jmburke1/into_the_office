@@ -1,0 +1,18 @@
+{
+  "specificRoom": "BlueCrystalAcquired",
+  "brandNewVisit": {
+    "textLines": [
+      "You look inside and see a beautiful glowing crystal."
+    ],
+    "blueTextLines": [
+      "It is a bright blue color."
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Continue",
+      "nextRoom": "office_lobby"
+    }
+  ]
+}

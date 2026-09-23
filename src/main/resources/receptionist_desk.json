@@ -1,0 +1,24 @@
+{
+  "specificRoom": "ReceptionistDeskRoom",
+  "brandNewVisit": {
+    "textLines": [
+      "You see a pad of paper on the Receptionist's desk.  Something is written on it",
+      "Update to $TRUTHFUL_COMBINATION"
+    ]
+  },
+  "alreadyVisited": {
+    "textLines": [
+      "Written on the pad of paper."
+    ],
+    "yellowTextLines": [
+      "Update to $LYING_COMBINATION"
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Continue",
+      "nextRoom": "office_lobby"
+    }
+  ]
+}

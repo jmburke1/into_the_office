@@ -9,17 +9,18 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class CurrentRoom {
-    private final List<String> textLines;
-    private final List<String> redTextLines;
-    private final List<String> yellowTextLines;
-    private final List<String> blueTextLines;
-    private final String prompt;
-    private final List<Choice> choices;
+    private List<String> textLines;
+    private List<String> redTextLines;
+    private List<String> yellowTextLines;
+    private List<String> blueTextLines;
+    private String prompt;
+    private List<Choice> choices;
 
-    public CurrentRoom(String json, boolean wasAlreadyHere) {
-        JSONObject jsonObject = new JSONObject(json);
+    public void init(JSONObject jsonObject, boolean wasAlreadyHere, Map<String, String> variables) {
+        respondToVariables(jsonObject, variables);
         
         // Initialize textLines with default empty list
         JSONObject textToPrint;
@@ -115,6 +116,9 @@ public class CurrentRoom {
     }
 
     public boolean isTerminal() {
-        return choices.isEmpty();
+        return getChoices().isEmpty();
+    }
+
+    protected void respondToVariables(JSONObject jsonObject, Map<String, String> variables) {
     }
 }
