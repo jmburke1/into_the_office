@@ -21,13 +21,13 @@
       "id": "2",
       "description": "Go home",
       "nextRoom": "home",
-      "availability": "firstTimeVisit"
+      "visitedRoomsStatus": "firstTimeVisit"
     },
     {
       "id": "2",
       "description": "Go home",
       "nextRoom": "home_bad",
-      "availability": "subsequentVisit"
+      "visitedRoomsStatus": "subsequentVisit"
     }
   ]
 }

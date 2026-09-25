@@ -10,5 +10,28 @@
     "textLines": [
       "You are in Bill's office."
     ]
-  }
+  },
+  "choices": [
+    {
+      "choiceType": "FILL_IN_THE_BLANK_WRONG",
+      "correctAnswer": "TRUTHFUL_COMBINATION",
+      "nextRoom": "suitcase_eats_character"
+    },
+    {
+      "choiceType": "FILL_IN_THE_BLANK_RIGHT",
+      "correctAnswer": "TRUTHFUL_COMBINATION",
+      "nextRoom": "office_of_bill_cleared",
+      "label": "Combination"
+    },
+    {
+      "id": "GO_BACK",
+      "description": "Just go back for now.",
+      "nextRoom": "office_lobby"
+    },
+    {
+      "id": "1",
+      "description": "You already have what you came here for",
+      "nextRoom": "office_lobby"
+    }
+  ]
 }

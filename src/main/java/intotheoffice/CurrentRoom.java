@@ -73,18 +73,8 @@ public class CurrentRoom {
             JSONArray choicesArray = jsonObject.getJSONArray("choices");
             for (int i = 0; i < choicesArray.length(); i++) {
                 JSONObject choiceJson = choicesArray.getJSONObject(i);
-                if(
-                        !choiceJson.has("availability") || (
-                                !wasAlreadyHere && choiceJson.getString("availability").equals("firstTimeVisit")
-                        ) || (
-                                wasAlreadyHere && choiceJson.getString("availability").equals("subsequentVisit")
-                        )
-                ) {
-                    Choice choice = new Choice(
-                            choiceJson.getString("id"),
-                            choiceJson.getString("description"),
-                            choiceJson.getString("nextRoom")
-                    );
+                Choice choice = (new ChoiceFactory(choiceJson, wasAlreadyHere)).createChoice();
+                if(choice != null) {
                     this.choices.add(choice);
                 }
             }
@@ -116,7 +106,7 @@ public class CurrentRoom {
     }
 
     public boolean isTerminal() {
-        return getChoices().isEmpty();
+        return choices.isEmpty();
     }
 
     protected void respondToVariables(JSONObject jsonObject, Map<String, String> variables) {
