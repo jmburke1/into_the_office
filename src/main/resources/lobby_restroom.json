@@ -1,0 +1,25 @@
+{
+  "specificRoom": "RestRoom",
+  "brandNewVisit": {
+    "textLines": [
+      "There's no nice way to put it.",
+      {"text": "It smells like someone died in here", "jLineColor": 2},
+      "The restroom is a complete mess!  Toilet paper everywhere.",
+      "Definitely signs of struggle!  Of course there would be.  It's a demonic invasion!",
+      "The door to the janitor closet is ajar.",
+      "For some odd reason, you grab a bottle of cleaner."
+    ]
+  },
+  "alreadyVisited": {
+    "textLines": [
+      "You're in the restroom."
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Go back to lobby",
+      "nextRoom": "office_lobby"
+    }
+  ]
+}
