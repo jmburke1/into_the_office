@@ -1,11 +1,19 @@
 package intotheoffice;
 
+import java.util.Map;
+
 public class FillInTheBlankRight extends Choice {
     private String correctAnswer;
+    private Map<String, String> variables;
 
-    public FillInTheBlankRight(String correctAnswer, String nextRoom, String answerTypeLabel) {
+    public FillInTheBlankRight(
+            String correctAnswer,
+            String nextRoom,
+            String answerTypeLabel,
+            Map<String, String> variables) {
         super("ENTERTEXT: ", "<The Correct "+answerTypeLabel+">", nextRoom);
         this.correctAnswer = correctAnswer;
+        this.variables = variables;
     }
 
     public String getIdDescription() {
@@ -14,7 +22,11 @@ public class FillInTheBlankRight extends Choice {
 
     public boolean idEquals(String input) {
         if(input.startsWith("ENTERTEXT: ")) {
-            return input.length() > 11 && input.substring(11).equals(correctAnswer);
+            boolean returnThis = input.length() > 11 && input.substring(11).equals(correctAnswer);
+            if(returnThis) {
+                variables.put("MOST_RECENT_COMBO", correctAnswer);
+            }
+            return returnThis;
         }
         return false;
     }

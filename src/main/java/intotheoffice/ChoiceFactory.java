@@ -2,13 +2,17 @@ package intotheoffice;
 
 import org.json.JSONObject;
 
+import java.util.Map;
+
 public class ChoiceFactory {
     private final JSONObject choiceJson;
     private final boolean wasAlreadyHere;
+    private final Map<String, String> variables;
 
-    public ChoiceFactory(JSONObject choiceJsonParam, boolean wasAlreadyHereParam) {
+    public ChoiceFactory(JSONObject choiceJsonParam, boolean wasAlreadyHereParam, Map<String, String> variablesParam) {
         choiceJson = choiceJsonParam;
         wasAlreadyHere = wasAlreadyHereParam;
+        variables = variablesParam;
     }
 
     public Choice createChoice() {
@@ -25,7 +29,8 @@ public class ChoiceFactory {
                     choice = new FillInTheBlankRight(
                             choiceJson.getString("correctAnswer"),
                             choiceJson.getString("nextRoom"),
-                            choiceJson.getString("label")
+                            choiceJson.getString("label"),
+                            variables
                     );
                 }
                 if(choiceType.equals("FILL_IN_THE_BLANK_WRONG")) {

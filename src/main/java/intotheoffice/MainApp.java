@@ -11,6 +11,7 @@ import org.jline.terminal.TerminalBuilder;
 import org.jline.utils.AttributedString;
 import org.jline.utils.AttributedStyle;
 import org.jline.utils.InfoCmp;
+import org.json.JSONObject;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -25,18 +26,13 @@ public class MainApp {
                 .build();
 
         // Create lambda functions for printing
-        Consumer<String> printText = text -> terminal.writer().println(text);
-        Consumer<String> printRedText = text -> {
-            String redText = new AttributedString(text, AttributedStyle.DEFAULT.foreground(AttributedStyle.RED)).toAnsi();
-            terminal.writer().println(redText);
-        };
-        Consumer<String> printYellowText = text -> {
-            String yellowText = new AttributedString(text, AttributedStyle.DEFAULT.foreground(AttributedStyle.YELLOW)).toAnsi();
-            terminal.writer().println(yellowText);
-        };
-        Consumer<String> printBlueText = text -> {
-            String blueText = new AttributedString(text, AttributedStyle.DEFAULT.foreground(AttributedStyle.BLUE)).toAnsi();
-            terminal.writer().println(blueText);
+        Consumer<Object> printText = text -> {
+            if(text instanceof JSONObject jo) {
+                String coloredText = new AttributedString(jo.getString("text"), AttributedStyle.DEFAULT.foreground(jo.getInt("jLineColor"))).toAnsi();
+                terminal.writer().println(coloredText);
+            } else {
+                terminal.writer().println(text);
+            }
         };
 
         // Create lambda function for user input
@@ -51,9 +47,6 @@ public class MainApp {
         // Create and run the RoomTransitioner
         RoomTransitioner transitioner = new RoomTransitioner(
                 printText,
-                printRedText,
-                printYellowText,
-                printBlueText,
                 userInput,
                 () -> {
                     terminal.puts(InfoCmp.Capability.clear_screen);

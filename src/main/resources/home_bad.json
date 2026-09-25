@@ -1,13 +1,12 @@
 {
+  "specificRoom": "DemonsFollowedYouHome",
   "brandNewVisit": {
     "textLines": [
       "You decide it's better to be safe than sorry.",
       "You turn around and head home.",
       "You arrive and you faintly smell sulfur.",
-      "Did they follow you home?"
-    ],
-    "redTextLines": [
-      "Yes we did!!!"
+      "Did they follow you home?",
+      {"text": "Yes we did!!!", "jLineColor": 1}
     ]
   }
 }

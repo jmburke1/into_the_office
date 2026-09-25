@@ -2,10 +2,8 @@
   "specificRoom": "BlueCrystalAcquired",
   "brandNewVisit": {
     "textLines": [
-      "You look inside and see a beautiful glowing crystal."
-    ],
-    "blueTextLines": [
-      "It is a bright blue color."
+      "You look inside and see a beautiful glowing crystal.",
+      {"text": "It is a bright blue color.", "jLineColor": 4}
     ]
   },
   "choices": [

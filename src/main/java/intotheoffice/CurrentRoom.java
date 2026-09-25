@@ -12,10 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CurrentRoom {
-    private List<String> textLines;
-    private List<String> redTextLines;
-    private List<String> yellowTextLines;
-    private List<String> blueTextLines;
+    private List<Object> textLines;
     private String prompt;
     private List<Choice> choices;
 
@@ -33,34 +30,7 @@ public class CurrentRoom {
         if (textToPrint.has("textLines")) {
             JSONArray textArray = textToPrint.getJSONArray("textLines");
             for (int i = 0; i < textArray.length(); i++) {
-                this.textLines.add(textArray.getString(i));
-            }
-        }
-
-        // Initialize yellowTextLines with default empty list
-        this.yellowTextLines = new ArrayList<>();
-        if (textToPrint.has("yellowTextLines")) {
-            JSONArray yellowArray = textToPrint.getJSONArray("yellowTextLines");
-            for (int i = 0; i < yellowArray.length(); i++) {
-                this.yellowTextLines.add(yellowArray.getString(i));
-            }
-        }
-
-        // Initialize redTextLines with default empty list
-        this.redTextLines = new ArrayList<>();
-        if (textToPrint.has("redTextLines")) {
-            JSONArray redArray = textToPrint.getJSONArray("redTextLines");
-            for (int i = 0; i < redArray.length(); i++) {
-                this.redTextLines.add(redArray.getString(i));
-            }
-        }
-
-        // Initialize blueTextLines with default empty list
-        this.blueTextLines = new ArrayList<>();
-        if (textToPrint.has("blueTextLines")) {
-            JSONArray blueArray = textToPrint.getJSONArray("blueTextLines");
-            for (int i = 0; i < blueArray.length(); i++) {
-                this.blueTextLines.add(blueArray.getString(i));
+                this.textLines.add(textArray.get(i));
             }
         }
 
@@ -73,7 +43,7 @@ public class CurrentRoom {
             JSONArray choicesArray = jsonObject.getJSONArray("choices");
             for (int i = 0; i < choicesArray.length(); i++) {
                 JSONObject choiceJson = choicesArray.getJSONObject(i);
-                Choice choice = (new ChoiceFactory(choiceJson, wasAlreadyHere)).createChoice();
+                Choice choice = (new ChoiceFactory(choiceJson, wasAlreadyHere, variables)).createChoice();
                 if(choice != null) {
                     this.choices.add(choice);
                 }
@@ -81,20 +51,8 @@ public class CurrentRoom {
         }
     }
 
-    public List<String> getTextLines() {
+    public List<Object> getTextLines() {
         return textLines;
-    }
-
-    public List<String> getRedTextLines() {
-        return redTextLines;
-    }
-
-    public List<String> getYellowTextLines() {
-        return yellowTextLines;
-    }
-
-    public List<String> getBlueTextLines() {
-        return blueTextLines;
     }
 
     public String getPrompt() {

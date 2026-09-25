@@ -3,10 +3,8 @@
     "textLines": [
       "You push open the door and step inside.",
       "As you cross the threshold, you feel a cold wind blow through the building.",
-      "Your vision blurs temporarily!  And then you regain your footing."
-    ],
-    "yellowTextLines": [
-      "Demons tried to possess you!"
+      "Your vision blurs temporarily!  And then you regain your footing.",
+      {"text": "Demons tried to possess you!", "jLineColor": 3}
     ]
   },
   "alreadyVisited": {

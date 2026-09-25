@@ -22,12 +22,13 @@ public class ReceptionistDeskRoom extends CurrentRoom {
         }
         JSONArray array = jsonObject.getJSONObject("brandNewVisit").getJSONArray("textLines");
         array.put(1, array.getString(1).replace("$TRUTHFUL_COMBINATION", variables.get("TRUTHFUL_COMBINATION")));
-        array = jsonObject.getJSONObject("alreadyVisited").getJSONArray("yellowTextLines");
+        array = jsonObject.getJSONObject("alreadyVisited").getJSONArray("textLines");
         String lyingCombo = variables.get("LYING_COMBINATION");
         if(variables.containsKey("BLUE_CRYSTAL")) {
             lyingCombo = ": We have other ways!";
         }
-        array.put(0, array.getString(0).replace("$LYING_COMBINATION", lyingCombo));
+        JSONObject toBeTextReplaced = array.getJSONObject(1);
+        toBeTextReplaced.put("text", toBeTextReplaced.getString("text").replace("$LYING_COMBINATION", lyingCombo));
     }
 
     private String combo() {

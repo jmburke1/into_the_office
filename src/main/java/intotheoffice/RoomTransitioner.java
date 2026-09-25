@@ -15,22 +15,15 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class RoomTransitioner {
-    private final Consumer<String> printText;
-    private final Consumer<String> printRedText;
-    private final Consumer<String> printYellowText;
-    private final Consumer<String> printBlueText;
+    private final Consumer<Object> printText;
     private final Function<String, String> userInput;
     private final Set<String> alreadyVisitedRooms;
     private final Runnable doWhenNextRoom;
     private final Map<String, String> variables;
 
-    public RoomTransitioner(Consumer<String> printText, Consumer<String> printRedText,
-                            Consumer<String> printYellowText, Consumer<String> printBlueText,
+    public RoomTransitioner(Consumer<Object> printText,
                             Function<String, String> userInput, Runnable doWhenNextRoom) {
         this.printText = printText;
-        this.printRedText = printRedText;
-        this.printYellowText = printYellowText;
-        this.printBlueText = printBlueText;
         this.userInput = userInput;
         this.doWhenNextRoom = doWhenNextRoom;
         alreadyVisitedRooms = new HashSet<>();
@@ -53,25 +46,10 @@ public class RoomTransitioner {
             currentRoom.init(json, alreadyVisitedRooms.contains(currentRoomName), variables);
 
             // Print the room's text lines
-            for (String line : currentRoom.getTextLines()) {
+            for (Object line : currentRoom.getTextLines()) {
                 printText.accept(line);
             }
-            
-            // Print red text lines
-            for (String line : currentRoom.getRedTextLines()) {
-                printRedText.accept(line);
-            }
 
-            // Print yellow text lines
-            for (String line : currentRoom.getYellowTextLines()) {
-                printYellowText.accept(line);
-            }
-
-            // Print blue text lines
-            for (String line : currentRoom.getBlueTextLines()) {
-                printBlueText.accept(line);
-            }
-            
             // Check if this is a terminal room
             if (currentRoom.isTerminal()) {
                 break;

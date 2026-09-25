@@ -8,10 +8,8 @@
   },
   "alreadyVisited": {
     "textLines": [
-      "Written on the pad of paper."
-    ],
-    "yellowTextLines": [
-      "Update to $LYING_COMBINATION"
+      "Written on the pad of paper.",
+      {"text": "Update to $LYING_COMBINATION", "jLineColor": 3}
     ]
   },
   "choices": [
