@@ -1,5 +1,6 @@
-package intotheoffice;
+package intotheoffice.specific_rooms;
 
+import intotheoffice.CurrentRoom;
 import org.json.JSONObject;
 
 import java.util.Map;
