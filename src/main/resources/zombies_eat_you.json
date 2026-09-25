@@ -1,0 +1,9 @@
+{
+  "brandNewVisit": {
+    "textLines": [
+      "You make a mad dash for the elevator!",
+      "But the zombies are way too fast!",
+      {"text": "They catch you and eat you!!!", "jLineColor": 1}
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "specificRoom": "CrystalDepleted",
+  "brandNewVisit": {
+    "textLines": [
+      "You brandish the blue crystal and hold it right in their faces!",
+      "Piercing bluish-white light emanates from it and zaps them in their tracks!",
+      "But its entire power has vanished.  It is depleted.  It no longer glows."
+    ]
+  },
+  "prompt": "What do you want to do?",
+  "choices": [
+    {
+      "id": "1",
+      "description": "Go to the elevator",
+      "nextRoom": "elevator"
+    },
+    {
+      "id": "2",
+      "description": "Go to the Office Lobby",
+      "nextRoom": "office_lobby"
+    }
+  ]
+}

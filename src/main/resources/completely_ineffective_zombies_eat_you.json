@@ -1,0 +1,9 @@
+{
+  "brandNewVisit": {
+    "textLines": [
+      "You brandish the cleaning solution and spray it right in their faces!",
+      "It does absolutely nothing!",
+      {"text": "They close in on you and eat you!!!", "jLineColor": 1}
+    ]
+  }
+}

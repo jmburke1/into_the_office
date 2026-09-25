@@ -33,6 +33,11 @@
       "id": "4",
       "description": "Check out the Lobby restroom",
       "nextRoom": "lobby_restroom"
+    },
+    {
+      "id": "5",
+      "description": "Check out the cubicle farm",
+      "nextRoom": "cubicle_farm"
     }
   ]
 }

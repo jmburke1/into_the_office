@@ -1,0 +1,61 @@
+{
+  "specificRoom": "CubicleFarm",
+  "brandNewVisit": {
+    "textLines": [
+      "Papers strewn everywhere!  Half of the cubicle walls knocked over.",
+      "Signs of demonic invasion everywhere in this root due to the complete mess.",
+      {"text": "You hear moans!", "jLineColor": 3},
+      {"text": "You see hoards of zombies!", "jLineColor": 3},
+      {"text": "They see you!", "jLineColor": 1}
+    ]
+  },
+  "alreadyVisited": {
+    "textLines": [
+      "You're in the cubicle farm."
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Go back to the lobby",
+      "nextRoom": "zombies_follow_you_to_lobby_and_eat_you",
+      "visitedRoomsStatus": "firstTimeVisit"
+    },
+    {
+      "id": "2",
+      "description": "Make a mad dash for the elevator",
+      "nextRoom": "zombies_eat_you",
+      "visitedRoomsStatus": "firstTimeVisit"
+    },
+    {
+      "id": "3",
+      "description": "Use the blue crystal",
+      "nextRoom": "cubicle_farm_cleared_crystal_depleted",
+      "visitedRoomsStatus": "firstTimeVisit"
+    },
+    {
+      "id": "4",
+      "description": "Use the enchanted cleaning solution",
+      "nextRoom": "cubicle_farm_cleared",
+      "visitedRoomsStatus": "firstTimeVisit"
+    },
+    {
+      "id": "5",
+      "description": "Use the cleaning solution",
+      "nextRoom": "completely_ineffective_zombies_eat_you",
+      "visitedRoomsStatus": "firstTimeVisit"
+    },
+    {
+      "id": "1",
+      "description": "Go to the elevator",
+      "nextRoom": "elevator",
+      "visitedRoomsStatus": "subsequentVisit"
+    },
+    {
+      "id": "2",
+      "description": "Go to the Office Lobby",
+      "nextRoom": "office_lobby",
+      "visitedRoomsStatus": "subsequentVisit"
+    }
+  ]
+}

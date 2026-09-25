@@ -1,0 +1,10 @@
+{
+  "brandNewVisit": {
+    "textLines": [
+      "You high-tail it out of the cubicle farm.",
+      "But you are not safe!",
+      {"text": "The zombies are fast sprinters!", "jLineColor": 1},
+      {"text": "They followed you right out here and ate you!!!", "jLineColor": 1}
+    ]
+  }
+}

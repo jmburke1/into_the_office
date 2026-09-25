@@ -1,0 +1,22 @@
+{
+  "brandNewVisit": {
+    "textLines": [
+      "You brandish the enchanted cleaning solution and spray it right in their faces!",
+      "They seem surprisingly allergic as they rot away and dissolve into putrid puss!",
+      {"text": "Gross!  Just nasty!!!", "jLineColor": 2}
+    ]
+  },
+  "prompt": "What do you want to do?",
+  "choices": [
+    {
+      "id": "1",
+      "description": "Go to the elevator",
+      "nextRoom": "elevator"
+    },
+    {
+      "id": "2",
+      "description": "Go to the Office Lobby",
+      "nextRoom": "office_lobby"
+    }
+  ]
+}
