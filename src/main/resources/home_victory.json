@@ -1,0 +1,13 @@
+{
+  "brandNewVisit": {
+    "textLines": [
+      "You toss the blue crystal into the hole, thanking your lucky stars you didn't sqander its power earlier!",
+      "Bright flashes of light pour out of the hole and thunderous explosive force pushes you backward.",
+      "You crawl from the rubble and slowly start to walk your way toward home.  It is now broad daylight.",
+      "The sun is beautiful and the birds are singing like you've never heard before!",
+      "Maybe that's just gratitude that it is finally over.  Then, you're sipping",
+      "coffee on your porch, safe from any demon possession.",
+      {"text": "You solved the mystery of the demonic invasion and survived!", "jLineColor": 4}
+    ]
+  }
+}

@@ -15,6 +15,8 @@ public class CubicleFarm  extends CurrentRoom {
         }
         if(!"You have it!".equals(variables.get("CHARGED_CLEANING_SOLUTION"))) {
             array.remove(3);
+        } else {
+            array.remove(2);
         }
         if(!"You have it!".equals(variables.get("BLUE_CRYSTAL"))) {
             array.remove(2);

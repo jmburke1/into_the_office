@@ -1,0 +1,19 @@
+{
+  "brandNewVisit": {
+    "textLines": [
+      "You are in the basement.  You feel a presence down here, as if something is hiding from you."
+    ]
+  },
+  "alreadyVisited": {
+    "textLines": [
+      "You in the basement.  You need something that reveals the truth."
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Go back to the elevator.",
+      "nextRoom": "elevator"
+    }
+  ]
+}

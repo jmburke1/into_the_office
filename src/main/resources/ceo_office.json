@@ -1,0 +1,22 @@
+{
+  "specificRoom": "CEOOffice",
+  "brandNewVisit": {
+    "textLines": [
+      "You are in the CEO's office.",
+      "You see a peculiar looking pair of glasses on the CEO's desk.  The kind that look like they",
+      "Reveal the truth.  You grab them$ZOMBIE_BLAST"
+    ]
+  },
+  "alreadyVisited": {
+    "textLines": [
+      "You're in the CEO's office."
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Go back to the elevator.",
+      "nextRoom": "elevator"
+    }
+  ]
+}

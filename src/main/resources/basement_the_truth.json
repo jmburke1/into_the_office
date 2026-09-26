@@ -1,0 +1,29 @@
+{
+  "specificRoom": "BasementFinale",
+  "brandNewVisit": {
+    "textLines": [
+      "You are in the basement.  You feel a presence down here, as if something is hiding from you.",
+      "You put on the CEO's glasses and there it is, right in front of you!.",
+      {"text": "A giant hole to hell!", "jLineColor": 3},
+      {"text": "Glowing red and orange and pouring hordes of spectres!", "jLineColor": 3},
+      {"text": "Pouring hordes of ghouls into our world!", "jLineColor": 3}
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Toss in the blue crystal",
+      "nextRoom": "home_victory"
+    },
+    {
+      "id": "2",
+      "description": "Toss in the blue crystal",
+      "nextRoom": "blue_crystal_completely_useless"
+    },
+    {
+      "id": "3",
+      "description": "Go back to the elevator",
+      "nextRoom": "pulled_into_the_hole"
+    }
+  ]
+}

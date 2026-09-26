@@ -1,0 +1,35 @@
+{
+  "specificRoom": "Elevator",
+  "brandNewVisit": {
+    "textLines": [
+      "You are in the elevator.  It actually looks surprisingly normal compared to the rest of the office."
+    ]
+  },
+  "alreadyVisited": {
+    "textLines": [
+      "You're in the elevator."
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Go back to the cubicle farm",
+      "nextRoom": "cubicle_farm"
+    },
+    {
+      "id": "2",
+      "description": "Go upstairs to the CEO's office",
+      "nextRoom": "ceo_office"
+    },
+    {
+      "id": "3",
+      "description": "Go downstairs to the basement",
+      "nextRoom": "basement_hiding_from_you"
+    },
+    {
+      "id": "4",
+      "description": "Go downstairs to the basement",
+      "nextRoom": "basement_the_truth"
+    }
+  ]
+}
