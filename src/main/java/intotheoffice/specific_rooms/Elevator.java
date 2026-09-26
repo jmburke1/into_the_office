@@ -12,6 +12,7 @@ public class Elevator extends CurrentRoom {
         JSONArray array = jsonObject.getJSONArray("choices");
         if("You have it!".equals(variables.get("CEO_GLASSES"))) {
             array.remove(2);
+            array.getJSONObject(2).put("id", "3");
         } else {
             array.remove(3);
         }

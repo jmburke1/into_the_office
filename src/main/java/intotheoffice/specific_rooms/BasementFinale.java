@@ -12,8 +12,11 @@ public class BasementFinale extends CurrentRoom {
         JSONArray array = jsonObject.getJSONArray("choices");
         if(!"You have it!".equals(variables.get("BLUE_CRYSTAL"))) {
             array.remove(0);
+            array.getJSONObject(0).put("id", "1");
+            array.getJSONObject(1).put("id", "2");
         } else {
             array.remove(1);
+            array.getJSONObject(1).put("id", "2");
         }
     }
 }
