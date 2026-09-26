@@ -54,6 +54,9 @@ public class RoomTransitionerTest {
             Assertions.assertEquals(expectedOutputs.getString(i), o.toString());
             i++;
         }
+        /*for(Object o : collected) { //Uncomment this and comment out the other when adding tests.
+            System.out.println(o);
+        }*/
     }
     private void printText(Object o) {
         collected.add(o);
@@ -67,8 +70,9 @@ public class RoomTransitionerTest {
     static Stream<JSONObject> provideJsonObjectsViaClassLoader() throws URISyntaxException {
         ClassLoader classLoader = RoomTransitionerTest.class.getClassLoader();
         URL resource = classLoader.getResource("expected_outputs");
+        //URL resource = classLoader.getResource("under_construction"); //Uncomment this and comment out the other when adding tests.
         if (resource == null) {
-            throw new IllegalArgumentException("Folder 'expected_outputs' not found in test resources!");
+            throw new IllegalArgumentException("Folder not found in test resources!");
         }
         File directory = new File(resource.toURI());
         File[] files = directory.listFiles();
