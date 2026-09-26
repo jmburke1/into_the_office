@@ -36,8 +36,8 @@ public class RoomTransitionerTest {
         roomIncrementCount = -1;
     }
 
-    @ParameterizedTest(name = "[{index}] File: {0}")
-    @MethodSource("provideFilesViaClassLoader")
+    @ParameterizedTest(name = "[{index}] Json: {0}")
+    @MethodSource("provideJsonObjectsViaClassLoader")
     public void doTest(JSONObject expectedContent) {
         JSONArray basedOnUserInputs = expectedContent.getJSONArray("basedOnUserInputs");
         RoomTransitioner transitioner = new RoomTransitioner(
@@ -64,7 +64,7 @@ public class RoomTransitionerTest {
         return basedOnUserInputs.getString(roomIncrementCount);
     }
 
-    static Stream<JSONObject> provideFilesViaClassLoader() throws URISyntaxException {
+    static Stream<JSONObject> provideJsonObjectsViaClassLoader() throws URISyntaxException {
         ClassLoader classLoader = RoomTransitionerTest.class.getClassLoader();
         URL resource = classLoader.getResource("expected_outputs");
         if (resource == null) {
