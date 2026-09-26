@@ -1,0 +1,32 @@
+{
+  "expectedThingsPrinted": [
+    "You are standing outside the office building.",
+    "The door is slightly ajar, revealing a dimly lit interior.",
+    "What do you want to do?",
+    "1. Enter the office",
+    "2. Go home",
+    "You push open the door and step inside.",
+    "As you cross the threshold, you feel a cold wind blow through the building.",
+    "Your vision blurs temporarily!  And then you regain your footing.",
+    "{\"jLineColor\":3,\"text\":\"Demons tried to possess you!\"}",
+    "1. Go back outside",
+    "2. Take a closer look at the receptionist's desk",
+    "3. Check out Bill's office",
+    "4. Check out the Lobby restroom",
+    "5. Check out the cubicle farm",
+    "You're back outside.",
+    "What do you want to do?",
+    "1. Enter the office",
+    "2. Go home",
+    "You decide it's better to be safe than sorry.",
+    "You turn around and head home.",
+    "You arrive and you faintly smell sulfur.",
+    "Did they follow you home?",
+    "{\"jLineColor\":1,\"text\":\"Yes we did!!!\"}"
+  ],
+  "basedOnUserInputs": [
+    "1",
+    "1",
+    "2"
+  ]
+}

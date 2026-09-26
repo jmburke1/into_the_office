@@ -54,9 +54,14 @@ public class RoomTransitionerTest {
             Assertions.assertEquals(expectedOutputs.getString(i), o.toString());
             i++;
         }
-        /*for(Object o : collected) { //Uncomment this and comment out the other when adding tests.
-            System.out.println(o);
-        }*/
+        /*
+        //Uncomment this and comment out the other when adding tests.
+        i = 0;
+        for(Object o : collected) {
+            basedOnUserInputs.put(i, o.toString());
+        }
+        System.out.println(expectedContent);
+        */
     }
     private void printText(Object o) {
         collected.add(o);
