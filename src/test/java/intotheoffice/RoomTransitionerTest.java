@@ -1,13 +1,24 @@
 package intotheoffice;
 
 import org.jline.utils.InfoCmp;
-import org.junit.jupiter.api.Test;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class RoomTransitionerTest {
     private List<Object> collected;
@@ -25,28 +36,57 @@ public class RoomTransitionerTest {
         roomIncrementCount = -1;
     }
 
-    @Test
-    public void doTest() {
-        List<String> userEntries = new ArrayList<>();
-        userEntries.add("2");
+    @ParameterizedTest(name = "[{index}] File: {0}")
+    @MethodSource("provideFilesViaClassLoader")
+    public void doTest(JSONObject expectedContent) {
+        JSONArray basedOnUserInputs = expectedContent.getJSONArray("basedOnUserInputs");
         RoomTransitioner transitioner = new RoomTransitioner(
                 this::printText,
-                ti -> arrayListUserInput(ti, userEntries),
+                ti -> arrayListUserInput(ti, basedOnUserInputs),
                 () -> {
                     roomIncrementCount++;
                 }
         );
         transitioner.run("scene_outside_office_building");
+        JSONArray expectedOutputs = expectedContent.getJSONArray("expectedThingsPrinted");
+        int i = 0;
         for(Object o : collected) {
-            System.out.println(o);
+            Assertions.assertEquals(expectedOutputs.getString(i), o.toString());
+            i++;
         }
     }
     private void printText(Object o) {
         collected.add(o);
     }
 
-    private String arrayListUserInput(String terminalIndicator, List<String> userEntries) {
+    private String arrayListUserInput(String terminalIndicator, JSONArray basedOnUserInputs) {
         Assertions.assertEquals("> ", terminalIndicator);
-        return userEntries.get(roomIncrementCount);
+        return basedOnUserInputs.getString(roomIncrementCount);
+    }
+
+    static Stream<JSONObject> provideFilesViaClassLoader() throws URISyntaxException {
+        ClassLoader classLoader = RoomTransitionerTest.class.getClassLoader();
+        URL resource = classLoader.getResource("expected_outputs");
+        if (resource == null) {
+            throw new IllegalArgumentException("Folder 'expected_outputs' not found in test resources!");
+        }
+        File directory = new File(resource.toURI());
+        File[] files = directory.listFiles();
+        if (files == null) {
+            return Stream.empty();
+        }
+
+        return Arrays.stream(files)
+                .filter(File::isFile)
+                .map(file -> RoomTransitionerTest.readString(Path.of(file.toString())))
+                .map(JSONObject::new); // Exclude subdirectories
+    }
+
+    private static String readString(Path path) {
+        try {
+            return Files.readString(path);
+        } catch(IOException ioex) {
+            throw new RuntimeException(ioex);
+        }
     }
 }
