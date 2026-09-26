@@ -1,7 +1,8 @@
 {
   "brandNewVisit": {
     "textLines": [
-      "You are in the basement.  You feel a presence down here, as if something is hiding from you."
+      "You are in the basement.  You feel a presence down here, as if something is hiding from you.",
+      "What you see are mostly janitorial supplies."
     ]
   },
   "alreadyVisited": {

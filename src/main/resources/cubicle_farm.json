@@ -3,7 +3,8 @@
   "brandNewVisit": {
     "textLines": [
       "Papers strewn everywhere!  Half of the cubicle walls knocked over.",
-      "Signs of demonic invasion everywhere in this root due to the complete mess.",
+      "Signs of demonic invasion everywhere ... it's a complete mess!",
+      "Someone's spinal chord ripped out and hung from the ceiling!",
       {"text": "You hear moans!", "jLineColor": 3},
       {"text": "You see hoards of zombies!", "jLineColor": 3},
       {"text": "They see you!", "jLineColor": 1}
