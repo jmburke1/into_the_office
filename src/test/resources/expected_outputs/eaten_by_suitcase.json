@@ -2,6 +2,7 @@
   "basedOnUserInputs": [
     "1",
     "3",
+    "ABCDE",
     "ENTERTEXT: ABCDE"
   ],
   "expectedThingsPrinted": [
@@ -25,6 +26,7 @@
     "ENTERTEXT: <Your Wild Guess>",
     "ENTERTEXT: <The Correct Combination>",
     "GO_BACK. Just go back for now.",
+    "Please choose a valid option.",
     "The suitcase grows a pair of red glowing eyes.",
     "This is bad news!  It leaps out of your hands, opens its mouth",
     "and bites your head clean off!!!",
