@@ -91,7 +91,7 @@ public class RoomTransitioner {
     private String loadRoomJson(String roomName) {
         // Load the JSON file from resources
         InputStream inputStream = getClass().getClassLoader()
-                .getResourceAsStream(roomName + ".json");
+                .getResourceAsStream("room_jsons/" + roomName + ".json");
         
         if (inputStream == null) {
             throw new RuntimeException("Room JSON file not found: " + roomName + ".json");
