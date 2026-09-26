@@ -1,4 +1,7 @@
 {
+  "basedOnUserInputs": [
+    "2"
+  ],
   "expectedThingsPrinted": [
     "You are standing outside the office building.",
     "The door is slightly ajar, revealing a dimly lit interior.",
@@ -9,8 +12,5 @@
     "You turn around and head home.",
     "The next day, you're sipping coffee on your porch, safe from any demon possession.",
     "{\"jLineColor\":4,\"text\":\"You chose to go home and survived!\"}"
-  ],
-  "basedOnUserInputs": [
-    "2"
   ]
 }
