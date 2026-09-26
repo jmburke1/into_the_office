@@ -1,7 +1,10 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 Jason Burke
+ */
 package intotheoffice.specific_rooms;
 
 import intotheoffice.CurrentRoom;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Map;

@@ -23,3 +23,7 @@ The clock is ticking. The office is calling. Are you brave enough to face what l
 ---
 
 A full-fledged TUI game about exorcizing a demon-infested haunted office building!
+
+## License
+
+MIT - do whatever you want with your downloaded copy of it.

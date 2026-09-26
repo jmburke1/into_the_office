@@ -1,3 +1,7 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 Jason Burke
+ */
 package intotheoffice.specific_rooms;
 
 import intotheoffice.CurrentRoom;

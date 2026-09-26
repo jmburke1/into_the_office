@@ -6,6 +6,8 @@ set -e
 
 ./gradlew shadowJar --no-daemon
 
+./gradlew test --no-daemon
+
 JAR_NAME=$(find "build/libs" -name '*.jar')
 
 exec java -jar "$JAR_NAME" "$@"
