@@ -4,7 +4,7 @@ A full-fledged TUI game about exorcizing a demon-infested haunted office buildin
 
 ## The Legend of the Blackwood Building
 
-In 1987, the Blackwood Corporate Center was a symbol of modern ambition, a gleaming twelve-story office building in the heart of downtown. It housed everything from cutting-edge tech startups to venerable law firms. But beneath the polished marble floors and behind the glass walls, a dark secret festered.
+In 1987, the Blackwood Corporate Center was a symbol of modern ambition (in spite of its small stature), a gleaming, yet small and simple office building in the heart of suburbia. It had its hands in everything from cutting-edge tech startups to venerable law firms. But beneath the polished marble floors and behind the glass walls, a dark secret festered.
 
 During construction, the building's foundations were laid over an old burial ground that the developers had dismissed as mere folklore. The ground was disturbed, the restless dead awakened, and something ancient slumbering in the earth was unleashed.
 
