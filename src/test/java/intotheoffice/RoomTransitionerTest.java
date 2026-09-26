@@ -56,9 +56,9 @@ public class RoomTransitionerTest {
         }
         /*
         //Uncomment this and comment out the other when adding tests.
-        i = 0;
         for(Object o : collected) {
             basedOnUserInputs.put(i, o.toString());
+            i++;
         }
         System.out.println(expectedContent);
         */
