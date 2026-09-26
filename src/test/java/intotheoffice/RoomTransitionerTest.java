@@ -1,6 +1,5 @@
 package intotheoffice;
 
-import org.jline.utils.InfoCmp;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -18,6 +17,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Stream;
 
 public class RoomTransitionerTest {
@@ -39,13 +39,15 @@ public class RoomTransitionerTest {
     @ParameterizedTest(name = "[{index}] Json: {0}")
     @MethodSource("provideJsonObjectsViaClassLoader")
     public void doTest(JSONObject expectedContent) {
+        Random fixed = new Random(12345L);
         JSONArray basedOnUserInputs = expectedContent.getJSONArray("basedOnUserInputs");
         RoomTransitioner transitioner = new RoomTransitioner(
                 this::printText,
                 ti -> arrayListUserInput(ti, basedOnUserInputs),
                 () -> {
                     roomIncrementCount++;
-                }
+                },
+                fixed
         );
         transitioner.run("scene_outside_office_building");
         JSONArray expectedOutputs = expectedContent.getJSONArray("expectedThingsPrinted");
@@ -54,6 +56,7 @@ public class RoomTransitionerTest {
             Assertions.assertEquals(expectedOutputs.getString(i), o.toString());
             i++;
         }
+        Assertions.assertEquals(expectedOutputs.length(), collected.size());
 
         //Uncomment this and comment out the other when adding tests.
         /*for(Object o : collected) {

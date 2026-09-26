@@ -13,6 +13,7 @@ import org.jline.utils.AttributedStyle;
 import org.jline.utils.InfoCmp;
 import org.json.JSONObject;
 
+import java.util.Random;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -51,7 +52,8 @@ public class MainApp {
                 () -> {
                     terminal.puts(InfoCmp.Capability.clear_screen);
                     terminal.flush();
-                }
+                },
+                new Random()
         );
 
         // Start the game with the initial room

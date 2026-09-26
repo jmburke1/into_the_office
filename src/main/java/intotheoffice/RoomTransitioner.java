@@ -13,6 +13,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Random;
 
 public class RoomTransitioner {
     private final Consumer<Object> printText;
@@ -22,12 +23,15 @@ public class RoomTransitioner {
     private final Map<String, String> variables;
 
     public RoomTransitioner(Consumer<Object> printText,
-                            Function<String, String> userInput, Runnable doWhenNextRoom) {
+                            Function<String, String> userInput,
+                            Runnable doWhenNextRoom,
+                            Random random) {
         this.printText = printText;
         this.userInput = userInput;
         this.doWhenNextRoom = doWhenNextRoom;
         alreadyVisitedRooms = new HashSet<>();
         variables = new HashMap<>();
+        Util.putRandomIntoMap(variables, random);
     }
 
     public void run(String startRoom) {
