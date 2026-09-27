@@ -3,7 +3,8 @@
   "brandNewVisit": {
     "textLines": [
       "You look inside and see a beautiful glowing crystal.",
-      {"text": "It is a bright blue color.", "jLineColor": 4}
+      {"text": "It is a bright blue color.", "jLineColor": 4},
+      "You take it."
     ]
   },
   "choices": [

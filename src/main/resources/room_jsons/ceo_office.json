@@ -17,6 +17,12 @@
       "id": "1",
       "description": "Go back to the elevator.",
       "nextRoom": "elevator"
+    },
+    {
+      "id": "2",
+      "description": "Look through them.",
+      "nextRoom": "ceo_office_the_truth",
+      "visitedRoomsStatus": "firstTimeVisit"
     }
   ]
 }

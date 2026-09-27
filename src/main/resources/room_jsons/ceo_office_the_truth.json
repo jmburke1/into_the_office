@@ -1,0 +1,19 @@
+{
+  "brandNewVisit": {
+    "textLines": [
+      "You look around.  In the corner, you see the body from a murder",
+      "that happened several years ago.  And blood spattered on the",
+      "wall that is invisible without the glasses.  And something written",
+      "on the wall ...",
+      {"text": "BBQ in the basement!!!", "jLineColor": 1},
+      "You also start to get a headache.  Seeing the truth has a cost!"
+    ]
+  },
+  "choices": [
+    {
+      "id": "1",
+      "description": "Take them back off",
+      "nextRoom": "ceo_office"
+    }
+  ]
+}
