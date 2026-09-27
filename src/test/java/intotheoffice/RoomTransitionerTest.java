@@ -57,10 +57,20 @@ public class RoomTransitionerTest {
         JSONArray expectedOutputs = expectedContent.getJSONArray("expectedThingsPrinted");
         int i = 0;
         for(Object o : collected) {
-            Assertions.assertEquals(expectedOutputs.getString(i), o.toString());
+            assertTextLinesEqual(expectedOutputs.getString(i), o);
             i++;
         }
         Assertions.assertEquals(expectedOutputs.length(), collected.size());
+    }
+    private void assertTextLinesEqual(String expected, Object actual) {
+        if(expected.startsWith("{")) {
+            JSONObject expectedJO = new JSONObject(expected);
+            JSONObject actualJO = (JSONObject) actual;
+            Assertions.assertEquals(expectedJO.getString("text"), actualJO.getString("text"));
+            Assertions.assertEquals(expectedJO.getInt("jLineColor"), actualJO.getInt("jLineColor"));
+        } else {
+            Assertions.assertEquals(expected, actual.toString());
+        }
     }
     private void printText(Object o) {
         if("Please choose a valid option.".equals(o)) {
