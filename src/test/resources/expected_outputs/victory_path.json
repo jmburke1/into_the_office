@@ -160,6 +160,6 @@
     "The sun is beautiful and the birds are singing like you've never heard before!",
     "Maybe that's just gratitude that it is finally over.  Then, you're sipping",
     "coffee on your porch, safe from any demon possession.",
-    "{\"jLineColor\":4,\"text\":\"You solved the mystery of the demonic invasion and survived!\"}"
+    {"jLineColor":4,"text":"You solved the mystery of the demonic invasion and survived!"}
   ]
 }
