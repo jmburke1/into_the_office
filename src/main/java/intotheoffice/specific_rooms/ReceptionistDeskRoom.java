@@ -32,8 +32,11 @@ public class ReceptionistDeskRoom extends CurrentRoom {
         array.put(1, array.getString(1).replace("$TRUTHFUL_COMBINATION", variables.get("TRUTHFUL_COMBINATION")));
         array = jsonObject.getJSONObject("alreadyVisited").getJSONArray("textLines");
         String lyingCombo = variables.get("LYING_COMBINATION");
-        if(variables.containsKey("BLUE_CRYSTAL")) {
+        if("You have it!".equals(variables.get("BLUE_CRYSTAL"))) {
             lyingCombo = ": We have other ways!";
+        }
+        if("A paperweight now!".equals(variables.get("BLUE_CRYSTAL"))) {
+            lyingCombo = ": LoL! You squandered it!";
         }
         JSONObject toBeTextReplaced = array.getJSONObject(1);
         toBeTextReplaced.put("text", toBeTextReplaced.getString("text").replace("$LYING_COMBINATION", lyingCombo));

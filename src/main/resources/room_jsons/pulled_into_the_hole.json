@@ -1,10 +1,14 @@
 {
+  "specificRoom": "PulledIntoHole",
   "brandNewVisit": {
     "textLines": [
       "You don't want to deal with this!",
       "You make a beeline for the elevator, but it's too late!!!",
       "A giant demonic hand reaches out of the hole, grabs you,",
-      {"text": "and pulls you down in!!!", "jLineColor": 1}
+      {"text": "and pulls you down in!!!", "jLineColor": 1},
+      {"text": "The crystal acts on its own!", "jLineColor": 4},
+      "Bright flashes of light pour out of the hole and a thunderous explosion issues forth!",
+      "The hole is sealed and the invasion is stopped ... with you in it!"
     ]
   }
 }
