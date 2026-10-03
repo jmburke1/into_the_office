@@ -6,7 +6,8 @@
     "steps": [
       {
         "title": "Application Workspace",
-        "text": "step1.md"
+        "text": "step1.md",
+        "foreground": "foreground.sh"
       }
     ],
     "intro": {
