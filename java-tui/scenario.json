@@ -1,0 +1,11 @@
+{
+  "title": "Launch My Java TUI Application",
+  "description": "An interactive, terminal-based user interface application.",
+  "type": "challenge",
+  "backend": {
+    "image": "ubuntu2204"
+  },
+  "interface": {
+    "layout": "terminal-only"
+  }
+}
