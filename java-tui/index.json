@@ -1,29 +1,26 @@
 {
   "title": "Launch Into The Office",
   "description": "An interactive, terminal-based TUI game about exorcising a demon infested office.",
-  "type": "kt",
+  "type": "challenge",
   "details": {
     "steps": [
       {
         "title": "Application Workspace",
         "text": "step1.md",
         "foreground": "setup.sh",
-        "blockNavigation": true,
-        "verify": "TUI_UNLOCKED_READY"
+        "blockNavigation": true
       },
       {
         "title": "Application Workspace(Cont)",
         "text": "step2.md",
         "foreground": "furthersetup.sh",
-        "blockNavigation": true,
-        "verify": "TUI_UNLOCKED_READY"
+        "blockNavigation": true
       },
       {
         "title": "Running Application",
         "text": "step3.md",
         "foreground": "foreground.sh",
-        "blockNavigation": true,
-        "verify": "TUI_UNLOCKED_READY"
+        "blockNavigation": true
       }
     ],
     "intro": {
