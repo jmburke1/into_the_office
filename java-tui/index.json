@@ -3,9 +3,12 @@
   "description": "An interactive, terminal-based user interface application.",
   "type": "challenge",
   "backend": {
-    "image": "ubuntu2204"
+    "imageid": "ubuntu"
   },
   "interface": {
     "layout": "terminal-only"
+  },
+  "setup": {
+    "script": "setup.sh"
   }
 }
