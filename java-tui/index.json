@@ -2,13 +2,25 @@
   "title": "Launch My Java TUI Application",
   "description": "An interactive, terminal-based user interface application.",
   "type": "challenge",
+  "details": {
+    "steps": [
+      {
+        "title": "Application Workspace",
+        "text": "step1.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "courseData": "setup.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
   "backend": {
     "imageid": "ubuntu"
   },
   "interface": {
     "layout": "terminal-only"
-  },
-  "setup": {
-    "script": "setup.sh"
   }
 }
