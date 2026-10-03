@@ -10,8 +10,13 @@
         "foreground": "setup.sh"
       },
       {
-        "title": "Running Application",
+        "title": "Application Workspace(Cont)",
         "text": "step2.md",
+        "foreground": "furthersetup.sh"
+      },
+      {
+        "title": "Running Application",
+        "text": "step3.md",
         "foreground": "foreground.sh"
       }
     ],
