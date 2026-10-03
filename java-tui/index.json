@@ -1,6 +1,6 @@
 {
-  "title": "Launch My Java TUI Application",
-  "description": "An interactive, terminal-based user interface application.",
+  "title": "Launch Into The Office",
+  "description": "An interactive, terminal-based TUI game about exorcising a demon infested office.",
   "type": "challenge",
   "details": {
     "steps": [
