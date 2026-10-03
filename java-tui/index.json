@@ -7,17 +7,23 @@
       {
         "title": "Application Workspace",
         "text": "step1.md",
-        "foreground": "setup.sh"
+        "foreground": "setup.sh",
+        "blockNavigation": true,
+        "verify": "TUI_UNLOCKED_READY"
       },
       {
         "title": "Application Workspace(Cont)",
         "text": "step2.md",
-        "foreground": "furthersetup.sh"
+        "foreground": "furthersetup.sh",
+        "blockNavigation": true,
+        "verify": "TUI_UNLOCKED_READY"
       },
       {
         "title": "Running Application",
         "text": "step3.md",
-        "foreground": "foreground.sh"
+        "foreground": "foreground.sh",
+        "blockNavigation": true,
+        "verify": "TUI_UNLOCKED_READY"
       }
     ],
     "intro": {
