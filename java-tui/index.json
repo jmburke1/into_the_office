@@ -7,12 +7,16 @@
       {
         "title": "Application Workspace",
         "text": "step1.md",
+        "foreground": "setup.sh"
+      },
+      {
+        "title": "Running Application",
+        "text": "step2.md",
         "foreground": "foreground.sh"
       }
     ],
     "intro": {
-      "text": "intro.md",
-      "courseData": "setup.sh"
+      "text": "intro.md"
     },
     "finish": {
       "text": "finish.md"

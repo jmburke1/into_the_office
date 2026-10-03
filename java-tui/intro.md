@@ -1,2 +1,2 @@
-# Preparing Your Application
-Please wait a moment while the environment installs Java and launches the console interface.
+# Try Out This Classic TUI Game
+Just click through the steps.
