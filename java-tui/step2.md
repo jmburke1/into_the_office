@@ -1,2 +1,2 @@
 # Still Preparing Your Application
-Please bear with this process as it continues to set up.  A KillerKoda limitation requires you to click another step of setup.
+Please bear with this process as it continues to set up.  A KillerKoda limitation requires you to click another step of setup.  Please do not click next or back while it is setting up.
