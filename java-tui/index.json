@@ -8,16 +8,6 @@
         "title": "Application Workspace",
         "text": "step1.md",
         "foreground": "setup.sh"
-      },
-      {
-        "title": "Application Workspace(Cont)",
-        "text": "step2.md",
-        "foreground": "furthersetup.sh"
-      },
-      {
-        "title": "Running Application",
-        "text": "step3.md",
-        "foreground": "foreground.sh"
       }
     ],
     "intro": {
