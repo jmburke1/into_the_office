@@ -1,2 +1,2 @@
 # Try Out This Classic TUI Game
-Just click through the steps.
+Just click through to the next step.
